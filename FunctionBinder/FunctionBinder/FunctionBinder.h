@@ -39,6 +39,7 @@ public:
 	static R bind(Args... args) {
 		for (const auto& p : pList)
 			p->callback(args...);
+		return {};
 	}
 	virtual R callback(Args...) = 0;
 };
