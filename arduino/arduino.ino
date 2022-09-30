@@ -1,6 +1,5 @@
-#include "FunctionBinder.h"
-
 #include <Wire.h>
+#include "FunctionBinder.h"
 
 class Reader : FunctionBinder<void(int)>
 {
