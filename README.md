@@ -1,4 +1,4 @@
-# FunctionBinder
+# FUnctionBinder
 
 メンバ関数をスタックし、静的関数として呼べるようにする。
 
@@ -108,9 +108,6 @@ flowchart LR
 -   １クラスに複数コールバック関数を設定する
 
     ```cpp
-    #include <iostream>
-    #include "FunctionBinder.h"
-
     class Sample : public FunctionBinder<void(int)>, public FunctionBinder<void(int, int)>
     {
     	void FunctionBinder<void(int)>::callback(int arg) override {
