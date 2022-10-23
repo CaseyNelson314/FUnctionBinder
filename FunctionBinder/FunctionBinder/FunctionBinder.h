@@ -1,10 +1,9 @@
 /// @file   FunctionBinder.h
 /// @date   2022/10/21
-/// @author ‘å‰Í —S‰î
 
 #pragma once
 
-/// @brief ŠÈˆÕüŒ`ƒŠƒXƒg
+/// @brief ï¿½ÈˆÕï¿½ï¿½`ï¿½ï¿½ï¿½Xï¿½g
 template<class T>
 struct LinearList {
 	struct Node {
@@ -22,7 +21,7 @@ struct LinearList {
 		}
 	}
 	void push_back(const T& r) {
-		if (tail)  /// —v‘f—L‚è
+		if (tail)  /// ï¿½vï¿½fï¿½Lï¿½ï¿½
 			tail = tail->next = new Node{ r };
 		else
 			head = tail       = new Node{ r };
@@ -51,7 +50,7 @@ class FunctionBinder<R(Args...)> {
 	static LinearList<FunctionBinder*> pList;
 public:
 	static R bind(Args... args) {
-		for (const auto& p : pList)  /// ‘S‚Ä‚Ìthisƒ|ƒCƒ“ƒ^æ“¾
+		for (const auto& p : pList)  /// ï¿½Sï¿½Ä‚ï¿½thisï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½æ“¾
 			p->callback(args...);
 		return {};
 	}
@@ -65,7 +64,7 @@ template<class R, class... Args>
 LinearList<FunctionBinder<R(Args...)>*> FunctionBinder<R(Args...)>::pList;
 
 
-/// @brief •”•ª“Áê‰» –ß‚è’l : void
+/// @brief ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‰» ï¿½ß‚ï¿½l : void
 template<class... Args>
 class FunctionBinder<void(Args...)> {
 	static LinearList<FunctionBinder*> pList;
