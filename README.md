@@ -89,6 +89,8 @@ flowchart LR
     			Serial.println("received");
     		}
     };
+    
+    Reader reader;
 
     void setup() {
     	Serial.begin(115200);
