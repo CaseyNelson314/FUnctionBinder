@@ -12,6 +12,8 @@ class Reader : FunctionBinder<void(int)>
 		}
 };
 
+Reader reader;
+
 void setup() {
 	Serial.begin(115200);
 	Wire.begin(0);
